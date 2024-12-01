@@ -40,14 +40,15 @@ public class AccelTurret extends ItemTurret{
         stats.add(AsStat.reloadFrom, reloadFrom/60);
         stats.add(AsStat.reloadTo, reloadTo/60);
     }
-    public void setBars() {
+        public void setBars() {
         super.setBars();
         addBar("Accelerating", (AccelerateTurretBuild entity) ->
                 new Bar(() ->
-                        Core.bundle.format("bar.accel", (int)(Math.min(entity.nreload / reloadFrom * 100, 100))),
+                        () -> "Speed Up:",  
                         () -> Pal.lightOrange,
-                        () -> entity.nreload/(reloadFrom-reloadTo)
+                        () -> entity.nreload/reloadTo
                 )
         );
     }
+
 }
