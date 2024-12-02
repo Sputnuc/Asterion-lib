@@ -43,8 +43,8 @@ public class AccelTurret extends ItemTurret{
         public void setBars() {
         super.setBars();
         addBar("Accelerating", (AccelerateTurretBuild entity) ->
-                new Bar(() ->
-                        () -> "Speed Up:",  
+                new Bar(
+                        () -> "Speed Up:",
                         () -> Pal.lightOrange,
                         () -> entity.nreload/reloadTo
                 )
