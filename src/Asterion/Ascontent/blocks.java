@@ -38,17 +38,26 @@ public class blocks {
                 }};
                 obeme = new AccelTurret("sdsdwefef") {{
                     requirements(Category.turret, with(Items.copper, 1));
-                    reloadFrom = 100;
-                    reloadTo = 5;
-                    acceleration = 0.5f;
+                    reload = 180;
+                    range = 270;
+                    maxBoost = 12f;
+                    acceleration = 0.001f;
+                    deceleration = 0.1f;
+
+                    // Параметры перегрева
+                    heatMax = 750f;
+                    heatPerShot = 0.5f;
+                    coolingRate = 1.5f;
+                    overheatPenalty = 0.5f;
+
                     size = 3;
                     health = 500;
                     ammo(
-                            Items.copper, new BasicBulletType(1.5f, 9) {{
+                            Items.graphite, new BasicBulletType(9f, 20) {{
                                 width = 7f;
                                 height = 9f;
-                                lifetime = 60f;
-                                speed = 1.5f * tilesize;
+                                lifetime = 30f;
+                                speed = 9;
                                 ammoMultiplier = 2;
                             }}
                     );
