@@ -10,6 +10,7 @@ public class asterion extends Mod{
     public void loadContent(){
         Log.info("Loading some Asterion content.");
         blocks.load();
+        ModEventHandler.init();
     }
 
 }
